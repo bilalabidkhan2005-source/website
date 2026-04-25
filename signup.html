@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up - Tasty Bistro</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <h1><a href="index.html">🍽️ Tasty Bistro</a></h1>
+        <nav>
+          <a href="index.html">Home</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="auth-main">
+      <section class="auth-card">
+        <h2>Create Your Account</h2>
+        <form id="signupForm">
+          <div class="msg" id="signupMsg"></div>
+          <input type="email" id="signupEmail" placeholder="Email" required />
+          <input
+            type="password"
+            id="signupPassword"
+            placeholder="Password (6+ chars)"
+            required
+          />
+          <input
+            type="password"
+            id="signupConfirmPassword"
+            placeholder="Confirm Password"
+            required
+          />
+          <button type="submit" class="auth-btn">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login</a></p>
+      </section>
+    </main>
+
+    <script>
+      document
+        .getElementById("signupForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const email = document.getElementById("signupEmail").value;
+          const password = document.getElementById("signupPassword").value;
+          const confirmPassword = document.getElementById(
+            "signupConfirmPassword",
+          ).value;
+          const msg = document.getElementById("signupMsg");
+
+          if (!email || !password || !confirmPassword) {
+            msg.textContent = "Please fill all fields.";
+            msg.style.color = "#ff4757";
+            return;
+          }
+
+          if (password.length < 6) {
+            msg.textContent = "Password must be at least 6 characters.";
+            msg.style.color = "#ff4757";
+            return;
+          }
+
+          if (password !== confirmPassword) {
+            msg.textContent = "Passwords do not match.";
+            msg.style.color = "#ff4757";
+            return;
+          }
+
+          // Simulate signup - store in localStorage
+          localStorage.setItem(
+            "user",
+            JSON.stringify({ email: email, loggedIn: true }),
+          );
+          msg.textContent = "Account created! Redirecting...";
+          msg.style.color = "#2ed573";
+          setTimeout(() => {
+            window.location.href = "index.html";
+          }, 1000);
+        });
+    </script>
+  </body>
+</html>

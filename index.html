@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tasty Bistro - Best Restaurant in Town</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-content">
+        <h1><a href="index.html">🍽️ Tasty Bistro</a></h1>
+        <nav>
+          <div id="authNav">
+            <button id="btnLogin" onclick="window.location.href = 'login.html'">
+              Login
+            </button>
+            <button
+              id="btnSignup"
+              onclick="window.location.href = 'signup.html'"
+            >
+              Sign Up
+            </button>
+          </div>
+          <button id="btnLogout" class="hidden" onclick="logoutUser()">
+            Logout
+          </button>
+          <div id="userGreeting" class="user-greeting hidden"></div>
+          <div id="cartCounter" class="cart-counter">Cart: 0</div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1>Welcome to Tasty Bistro</h1>
+        <p>
+          Experience the finest cuisines with fresh ingredients and authentic
+          flavors. Book your table now!
+        </p>
+        <a href="#menu" class="cta-btn">Book Table</a>
+      </section>
+
+      <!-- Menu / Grocery Cards -->
+      <section id="menu" class="section menu-section">
+        <h2>Our Delicious Menu</h2>
+        <div id="groceryCards" class="grocery-cards"></div>
+      </section>
+
+      <!-- About -->
+      <section class="section">
+        <h2>About Us</h2>
+        <div class="about-content">
+          <p>
+            Tasty Bistro is a family-owned restaurant serving mouth-watering
+            dishes since 2010. We use only the freshest ingredients sourced
+            locally to create unforgettable dining experiences. From gourmet
+            burgers to healthy salads, our menu has something for everyone.
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact
+      <section class="section">
+        <h2>Contact Us</h2>
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </section> -->
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h3>Tasty Bistro</h3>
+            <p>Family-owned since 2010. Fresh ingredients, unforgettable flavors.</p>
+            <p class="footer-address">123 Delicious Ave, Foodtown, FT 45678</p>
+            <p class="footer-hours">Hours: Mon-Sun 9:00 AM - 11:00 PM</p>
+          </div>
+
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="#menu">Menu</a></li>
+              <li><a href="login.html">Login</a></li>
+              <li><a href="signup.html">Sign Up</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Contact</h4>
+            <p>Email: <a href="mailto:hello@tastybistro.example">hello@tastybistro.example</a></p>
+            <p>Phone: <a href="tel:+1234567890">+1 (234) 567-890</a></p>
+            <p class="footer-waitlist">Reservations: walk-ins welcome or call ahead</p>
+          </div>
+
+          <div class="footer-column">
+            <h4>Newsletter</h4>
+            <p>Sign up for deals & updates</p>
+            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thanks for subscribing!');">
+              <input type="email" placeholder="Your email" required />
+              <button type="submit">Subscribe</button>
+            </form>
+            <div class="social-links">
+              <a href="#" aria-label="facebook">Facebook</a>
+              <a href="#" aria-label="instagram">Instagram</a>
+              <a href="#" aria-label="twitter">Twitter</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2024 Tasty Bistro. All rights reserved.</p>
+          <p class="small-links"><a href="#">Privacy</a> | <a href="#">Terms</a></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
